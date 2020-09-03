@@ -1,16 +1,18 @@
 #!/bin/bash
 
+mesa_glthread=true 
+glsl_zero_init=true 
+MESA_EXTENSION_OVERRIDE="-GL_KHR_texture_compression_astc_ldr -GL_KHR_texture_compression_astc_sliced_3d" 
+
 mkdir -p $HOME/.local/share/icons/hicolor/scalable/apps && cp $APPDIR/Ryujinx.png $HOME/.local/share/icons/hicolor/scalable/apps
-mkdir -p $XDG_CONFIG_HOME/Ryujinx/Logs
-cp $APPDIR/usr/share/Config.json $XDG_CONFIG_HOME/Ryujinx
 
 GITVER=`wget -qO- https://www.github.com/qurious-pixel/Ryujinx/releases/tag/continuous | grep qurious-pixel/Ryujinx/commit/ | cut -d '"' -f 2 | cut -d '/' -f 5 | awk '!x[$0]++'` 
 APPVER=`cat $APPDIR/version.txt`
 
 if [[ -z "$GITVER" ]]; then
-	$APPDIR/AppRun-patched > $XDG_CONFIG_HOME/Ryujinx/Logs/$(date '+%Y%m%d%H%M%S').log
+	$APPDIR/AppRun-patched 
 elif [ "$GITVER" = "$APPVER" ]; then
-	$APPDIR/AppRun-patched > $XDG_CONFIG_HOME/Ryujinx/Logs/$(date '+%Y%m%d%H%M%S').log
+	$APPDIR/AppRun-patched 
 else
 	$APPDIR/update.sh
 fi
