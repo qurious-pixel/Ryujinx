@@ -38,7 +38,7 @@ after_success:
   - cd artifacts/
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - chmod a+x upload.sh
-  - bash upload.sh Ryujinx-x86_64.AppImage*
+  #- bash upload.sh Ryujinx-x86_64.AppImage*
 branches: 
   except: 
     - /^(?i:continuous.*)$/
