@@ -39,7 +39,10 @@ build_script:
     bash -c "ls -al ./AppDir/usr"
     
     bash -c "ls -al ./AppDir/usr/bin"
+    
+    bash appimagetool-x86_64.AppImage AppDir/
 
+    bash -c "ls -al ."
     
 artifacts:
 #- path: ryujinx%config_name%%APPVEYOR_BUILD_VERSION%-win_x64.zip
