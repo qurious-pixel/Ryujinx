@@ -14,7 +14,7 @@ environment:
 build:
   parallel: false
 
- build_script:
+build_script:
     - ps: >-
         dotnet --version
         #dotnet publish -c $env:config -r win-x64 /p:Version=$env:APPVEYOR_BUILD_VERSION
