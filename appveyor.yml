@@ -40,7 +40,7 @@ for:
   matrix:
 
 only:
-      - image: Ubuntu
+      - job_name: Linux build
 
 build_script:
             
