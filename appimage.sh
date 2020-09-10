@@ -17,4 +17,4 @@ chmod a+x ./AppDir/usr/bin/Ryujinx
 
 curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
 chmod a+x appimagetool-x86_64.AppImage
-./appimagetool-x86_64.AppImage AppDir/
+bash appimagetool-x86_64.AppImage AppDir/
