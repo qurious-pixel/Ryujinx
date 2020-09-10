@@ -33,6 +33,12 @@ build_script:
     bash appimage.sh
     
     bash -c "ls -al ."
+    
+    bash -c "ls -al ./AppDir"
+    
+    bash -c "ls -al ./AppDir/usr"
+    
+    bash -c "ls -al ./AppDir/usr/bin"
 
     
 artifacts:
