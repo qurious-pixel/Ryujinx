@@ -21,7 +21,7 @@ chmod a+x appimagetool-x86_64.AppImage
 wsl ./appimagetool-x86_64.AppImage --appimage-extract
 export PATH="$PATH:/mnt/c/projects/ryujinx/squashfs-root/usr/bin"
 echo $PATH
-wsl ./squashfs-root/AppRun AppDir/
+wsl ./squashfs-root/usr/bin AppDir/
 
 #docker pull appimagecrafters/appimage-builder:latest
 #wsl docker run -v $(pwd):/Ryujinx appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
