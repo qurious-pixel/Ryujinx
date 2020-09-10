@@ -9,7 +9,8 @@ image:
 environment:
   appveyor_dotnet_runtime: netcoreapp3.1
   matrix:
-
+    - config: Release
+      config_name: '-'
 build:
   parallel: false
 
