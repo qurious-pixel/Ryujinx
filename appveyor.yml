@@ -11,8 +11,8 @@ environment:
   matrix:
     - config: Release
       config_name: '-'
-  cache:
-  - Ryujinx/bin -> appveyor.yml
+cache:
+- Ryujinx/bin -> appveyor.yml
 build_script:
 - ps: >-
     dotnet --version
