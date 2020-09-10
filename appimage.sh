@@ -4,6 +4,7 @@
 
 mkdir -p AppDir/usr/bin
 ls -al .
+ls -al Ryujinx/
 ls -al Ryujinx/bin
 ls -al Ryujinx/bin/Release
 ls -al Ryujinx/bin/Release/netcoreapp3.1/
