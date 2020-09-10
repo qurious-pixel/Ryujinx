@@ -19,5 +19,5 @@ curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/
 chmod a+x appimagetool-x86_64.AppImage
 
 docker pull appimagecrafters/appimage-builder:latest
-docker run -v $pwd:C:\\Ryujinx appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
+docker run -v $(pwd):C:\\Ryujinx appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
 
