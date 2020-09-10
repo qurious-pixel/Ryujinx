@@ -31,7 +31,7 @@ for:
 only:
       - image: Ubuntu
 
-  build_script:
+build_script:
             
     - chmod a+x appimage.sh
     
