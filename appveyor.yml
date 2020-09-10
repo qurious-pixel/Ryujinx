@@ -40,7 +40,9 @@ build_script:
     
     bash -c "ls -al ./AppDir/usr/bin"
     
-    bash appimagetool-x86_64.AppImage AppDir/
+    pwsh: Mount-DiskImage -ImagePath appimagetool-x86_64.AppImage 
+ 
+    bash squashfs-root/Apprun AppDir/
 
     bash -c "ls -al ."
     
