@@ -11,7 +11,7 @@ environment:
   matrix:
     - job_name: Windows build
     - job_name: Linux build
-    job_depends_on: Windows build
+      job_depends_on: Windows build
     - config: Release
       config_name: '-'
 build_script:
