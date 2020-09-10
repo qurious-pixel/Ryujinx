@@ -20,6 +20,6 @@ chmod a+x appimagetool-x86_64.AppImage
 
 echo $ErrorActionPreference
 docker pull appimagecrafters/appimage-builder:latest
-#docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 -v /$(pwd):/Ryujinx appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
-docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
+docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 -v /$(pwd):/ appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
+#docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
 
