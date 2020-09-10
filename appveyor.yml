@@ -39,4 +39,4 @@ artifacts:
 #- path: ryujinx%config_name%%APPVEYOR_BUILD_VERSION%-win_x64.zip
 #- path: ryujinx%config_name%%APPVEYOR_BUILD_VERSION%-linux_x64.tar.gz
 #- path: ryujinx%config_name%%APPVEYOR_BUILD_VERSION%-osx_x64.zip
-#- path: Ryujinx-x86_64.AppImage
+- path: Ryujinx-x86_64.AppImage
