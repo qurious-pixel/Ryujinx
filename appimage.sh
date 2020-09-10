@@ -21,4 +21,4 @@ chmod a+x appimagetool-x86_64.AppImage
 
 ./appimagetool-x86_64.AppImage AppDir/
 ./appimagetool-x86_64.AppImage --appimage-extract
-echo ryujinx%config_name%%APPVEYOR_BUILD_VERSION%-linux_x64
+echo ryujinx$config_name$APPVEYOR_BUILD_VERSION-linux_x64
