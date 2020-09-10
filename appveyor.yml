@@ -31,6 +31,8 @@ build_script:
     
     $pwd
     
+    dir $pwd 
+    
     bash -c "chmod +x C:\\projects\\ryujinx\\appimage.sh"
     
     bash -c "sh C:\\projects\\ryujinx\\appimage.sh"
