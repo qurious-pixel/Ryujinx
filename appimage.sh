@@ -19,7 +19,7 @@ curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/
 chmod a+x appimagetool-x86_64.AppImage
 #wsl -l -v
 wsl ./appimagetool-x86_64.AppImage --appimage-extract
-export PATH="$PATH:/mnt/c/projects/ryujinx/squashfs-root"
+export PATH="$PATH:/mnt/c/projects/ryujinx/squashfs-root/usr/bin"
 echo $PATH
 wsl ./squashfs-root/AppRun AppDir/
 
