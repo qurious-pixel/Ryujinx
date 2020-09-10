@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-sleep 600
+#sleep 600
 
 mkdir -p AppDir/usr/bin
 cp Ryujinx/bin/Release/netcoreapp3.1/linux-x64/publish/* AppDir/usr/bin/
