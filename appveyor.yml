@@ -11,8 +11,6 @@ environment:
   matrix:
     - config: Release
       config_name: '-'
-build:
-  parallel: false
       
 build_script:
 - ps: >-
