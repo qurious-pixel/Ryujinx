@@ -17,10 +17,10 @@ chmod a+x ./AppDir/usr/bin/Ryujinx
 
 curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
 chmod a+x appimagetool-x86_64.AppImage
-wsl appimagetool-x86_64.AppImage --appimage-help
+wsl ls -al
+wsl ./appimagetool-x86_64.AppImage --appimage-help
 
-bash echo $ErrorActionPreference
-#docker pull appimagecrafters/appimage-builder:latest
-#docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 -v .:. appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
+docker pull appimagecrafters/appimage-builder:latest
+MSYS_NO_PATHCONV=1 docker run -v /$(pwd):/Ryujinx appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
 #docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
 
