@@ -20,7 +20,7 @@ chmod a+x appimagetool-x86_64.AppImage
 
 
 
-ls -al \\wsl$\
+wsl ls -al \\wsl$\
 #wsl -l -v
 #wsl ./appimagetool-x86_64.AppImage --appimage-extract
 #export PATH="$PATH:/c/projects/ryujinx/squashfs-root/usr/bin"
@@ -28,8 +28,9 @@ ls -al \\wsl$\
 #wsl ./squashfs-root/usr/bin/appimagetool AppDir/
 #wsl ./squashfs-root/usr/bin/desktop-file-validate AppDir/Ryujinx.desktop
 
-docker pull appimagecrafters/appimage-builder:latest
-docker run -v $PWD:$PWD appimagecrafters/appimage-builder:latest /bin/bash ls -al
+docker run --help
+#docker pull appimagecrafters/appimage-builder:latest
+#docker run -v $PWD:$PWD appimagecrafters/appimage-builder:latest /bin/bash ls -al
 #docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
 
 
