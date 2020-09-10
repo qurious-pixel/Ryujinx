@@ -33,7 +33,7 @@ build_script:
     
     dir $pwd 
     
-    bash -c "chmod +x C:\\projects\\ryujinx\\appimage.sh"
+    bash -c "ls -al ."
     
     bash -c "sh C:\\projects\\ryujinx\\appimage.sh"
     
