@@ -5,7 +5,7 @@ branches:
   - appveyor2
 image: 
   - Visual Studio 2019
-  - Ubuntu
+  #- Ubuntu
 environment:
   appveyor_dotnet_runtime: netcoreapp3.1
   matrix:
@@ -25,6 +25,9 @@ build_script:
     7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar.gz ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar
     #7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-osx_x64.zip $env:APPVEYOR_BUILD_FOLDER\Ryujinx\bin\$env:config\$env:appveyor_dotnet_runtime\osx-x64\publish\
 
+image: 
+  #- Visual Studio 2019
+  - Ubuntu
 for:
 -
   matrix:
