@@ -19,10 +19,8 @@ curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/
 chmod a+x appimagetool-x86_64.AppImage
 
 
-
-#wsl ls -al \\wsl$\
-#wsl -l -v
-#wsl ./appimagetool-x86_64.AppImage --appimage-extract
+./appimagetool-x86_64.AppImage /AppDir
+./appimagetool-x86_64.AppImage --appimage-extract
 #export PATH="$PATH:/c/projects/ryujinx/squashfs-root/usr/bin"
 #echo $PATH
 #wsl ./squashfs-root/usr/bin/appimagetool AppDir/
