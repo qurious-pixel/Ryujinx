@@ -3,6 +3,8 @@
 #sleep 600
 
 mkdir -p AppDir/usr/bin
+ls -al .
+ls -al Ryujinx/bin/Release/netcoreapp3.1/linux-x64/publish/*
 cp Ryujinx/bin/Release/netcoreapp3.1/linux-x64/publish/* AppDir/usr/bin/
 cp Ryujinx/Ui/assets/Icon.png AppDir/Ryujinx.png
 cp Ryujinx/Ui/assets/Ryujinx.desktop AppDir/Ryujinx.desktop
