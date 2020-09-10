@@ -9,11 +9,19 @@ image:
 environment:
   appveyor_dotnet_runtime: netcoreapp3.1
   matrix:
-    - config: Release
-      config_name: '-'
+  - job_name: Windows build
+    appveyor_build_worker_image: Visual Studio 2019
+
+  - job_name: Linux build
+    appveyor_build_worker_image: Ubuntu
 build:
   parallel: false
-      
+
+for:
+-
+    matrix:
+      only:
+        - job_name: Windows build
 build_script:
 - ps: >-
     dotnet --version
@@ -25,7 +33,7 @@ build_script:
     7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar.gz ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar
     #7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-osx_x64.zip $env:APPVEYOR_BUILD_FOLDER\Ryujinx\bin\$env:config\$env:appveyor_dotnet_runtime\osx-x64\publish\
 
-for:
+
 -
   matrix:
     only:
