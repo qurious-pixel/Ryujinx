@@ -4,15 +4,13 @@ branches:
   - master
   - appveyor3
 image: 
-  #- Visual Studio 2019
+  - Visual Studio 2019
   - Ubuntu
 environment:
   appveyor_dotnet_runtime: netcoreapp3.1
   matrix:
     - config: Release
       config_name: '-'
-build:
-  parallel: false
 
 build_script:
     - ps: >-
