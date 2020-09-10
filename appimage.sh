@@ -30,7 +30,7 @@ chmod a+x appimagetool-x86_64.AppImage
 
 docker run --help
 docker pull appimagecrafters/appimage-builder:latest
-docker run --mount 'type=volume,src=$PWD,dst=/' appimagecrafters/appimage-builder:latest /bin/bash ls -al
+docker run --mount 'type=bind,src=$PWD,dst=/Ryujinx' appimagecrafters/appimage-builder:latest /bin/bash ls -al
 #docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
 
 
