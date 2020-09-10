@@ -22,6 +22,7 @@ for:
     matrix:
       only:
         - job_name: Windows build
+          appveyor_dotnet_runtime: netcoreapp3.1
 build_script:
 - ps: >-
     dotnet --version
