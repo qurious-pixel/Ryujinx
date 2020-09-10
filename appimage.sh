@@ -17,7 +17,9 @@ chmod a+x ./AppDir/usr/bin/Ryujinx
 
 curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
 chmod a+x appimagetool-x86_64.AppImage
+wsl -l -v
 wsl ./appimagetool-x86_64.AppImage --appimage-extract
+export PATH=$PATH:/mnt/c/projects/ryujinx/squashfs-root
 wsl ./squashfs-root/usr/bin/appimagetool AppDir/
 
 docker pull appimagecrafters/appimage-builder:latest
