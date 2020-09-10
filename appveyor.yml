@@ -10,6 +10,8 @@ environment:
   appveyor_dotnet_runtime: netcoreapp3.1
   matrix:
     - job_name: Windows build
+    - job_name: Linux build
+    job_depends_on: Windows build
     - config: Release
       config_name: '-'
 build_script:
@@ -26,8 +28,7 @@ build_script:
 for:
 -
   matrix:
-  - job_name: Linux build
-  job_depends_on: Windows build
+
 only:
       - image: Ubuntu
 
