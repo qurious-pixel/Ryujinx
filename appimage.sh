@@ -17,7 +17,7 @@ chmod a+x ./AppDir/usr/bin/Ryujinx
 
 curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
 chmod a+x appimagetool-x86_64.AppImage
-ls -al .
-bash -c "mount -o appimagetool-x86_64.AppImage squashfs-root"
+mkdir squashfs-root
+bash -c "mount -o loop appimagetool-x86_64.AppImage squashfs-root/"
 ls -al .
 bash squashfs-root/Apprun AppDir/
