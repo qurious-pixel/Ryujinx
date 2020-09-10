@@ -5,7 +5,7 @@ branches:
   - appveyor3
 image: 
   - Visual Studio 2019
-  - Ubuntu
+  #- Ubuntu
 environment:
   appveyor_dotnet_runtime: netcoreapp3.1
   matrix:
