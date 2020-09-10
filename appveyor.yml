@@ -11,7 +11,7 @@ environment:
   matrix:
   - job_name: Windows build
     appveyor_build_worker_image: Visual Studio 2019
-
+    appveyor_dotnet_runtime: netcoreapp3.1
   - job_name: Linux build
     appveyor_build_worker_image: Ubuntu
 build:
