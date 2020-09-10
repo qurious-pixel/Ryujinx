@@ -32,7 +32,7 @@ build_script:
     
     chmod a+x appimage.sh
     
-    ./appimage.sh
+    bash appimage.sh
     
 artifacts:
 #- path: ryujinx%config_name%%APPVEYOR_BUILD_VERSION%-win_x64.zip
