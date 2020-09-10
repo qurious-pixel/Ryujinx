@@ -31,14 +31,6 @@ build_script:
     chmod a+x appimage.sh
     
     bash appimage.sh
-    
-    bash -c "ls -al ."
-    
-    bash -c "ls -al ./AppDir"
-    
-    bash -c "ls -al ./AppDir/usr"
-    
-    bash -c "ls -al ./AppDir/usr/bin"
 
     bash -c "ls -al ."
     
