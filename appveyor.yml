@@ -28,12 +28,20 @@ build_script:
     #7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar.gz ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar
 
     #7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-osx_x64.zip $env:APPVEYOR_BUILD_FOLDER\Ryujinx\bin\$env:config\$env:appveyor_dotnet_runtime\osx-x64\publish\
-        
-    chmod a+x appimage.sh
-    
-    bash appimage.sh
+      
+for:
+-
+  matrix:
+    only:
+      - image: Ubuntu
 
-    bash -c "ls -al ."
+  build_script:
+            
+    - chmod a+x appimage.sh
+    
+    - bash appimage.sh
+
+    - bash -c "ls -al ."
     
 artifacts:
 #- path: ryujinx%config_name%%APPVEYOR_BUILD_VERSION%-win_x64.zip
