@@ -12,7 +12,7 @@ environment:
     - config: Release
       config_name: '-'
 cache:
-- Ryujinx/bin -> appveyor.yml
+- Ryujinx/bin -> appimage.sh
 build_script:
 - ps: >-
     dotnet --version
