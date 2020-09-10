@@ -33,4 +33,4 @@ chmod a+x appimagetool-x86_64.AppImage
 #docker run --platform=linux --mount type=bind,source="$(pwd)",target=/app appimagecrafters/appimage-builder:latest /bin/bash ls -al
 #docker run -e COMPOSE_CONVERT_WINDOWS_PATHS=1 appimagecrafters/appimage-builder:latest appimagetool-x86_64.AppImage AppDir/
 docker pull --platform=linux ubuntu:latest
-docker run --platform=linux --mount type=bind,source="$(pwd)",target=/app ubuntu:latest /bin/bash ls -al
+docker run --platform=linux --mount type=bind,source="$(pwd)",target=/app ubuntu:latest
