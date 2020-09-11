@@ -1,7 +1,5 @@
 #!/bin/bash -ex
 
-#sleep 600
-
 mkdir -p AppDir/usr/bin
 cp Ryujinx/bin/Release/netcoreapp3.1/linux-x64/publish/* AppDir/usr/bin/
 cp Ryujinx/Ui/assets/Icon.png AppDir/Ryujinx.png
@@ -20,7 +18,5 @@ chmod a+x ./AppDir/usr/bin/Ryujinx
 curl -sLO "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
 chmod a+x appimagetool-x86_64.AppImage
 
-
 ./appimagetool-x86_64.AppImage AppDir/
-./appimagetool-x86_64.AppImage --appimage-extract
 mv Ryujinx-x86_64.AppImage ryujinx$config_name$APPVEYOR_BUILD_VERSION-linux_x64.AppImage
