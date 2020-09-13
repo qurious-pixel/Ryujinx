@@ -3,7 +3,7 @@ branches:
   only:
   - master
 image:
-  - Visual Studio 2019
+  #- Visual Studio 2019
   - Ubuntu
 environment:
   appveyor_dotnet_runtime: netcoreapp3.1
@@ -12,7 +12,7 @@ environment:
       config_name: '-'
 
 build_script:
-- ps: >-
+- |-
     dotnet --version
     
     dotnet publish -c $env:config -r win-x64 /p:Version=$env:APPVEYOR_BUILD_VERSION
@@ -28,14 +28,7 @@ build_script:
     7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar.gz ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar
     
     7z a ryujinx$env:config_name$env:APPVEYOR_BUILD_VERSION-osx_x64.zip $env:APPVEYOR_BUILD_FOLDER\Ryujinx\bin\$env:config\$env:appveyor_dotnet_runtime\osx-x64\publish\
-    
-for:
--
-  matrix:
-    only:
-      - image: Ubuntu
-  build_script:
-    - |-
+
       dotnet publish -c $config -r linux-x64 /p:Version=$APPVEYOR_BUILD_VERSION
       
       mkdir -p AppDir/usr/bin ;
