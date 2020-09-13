@@ -22,13 +22,13 @@ build_script:
     
     dotnet publish -c $config -r osx-x64 /p:Version=$APPVEYOR_BUILD_VERSION
     
-    7z a ryujinx$config_name$APPVEYOR_BUILD_VERSION-win_x64.zip $APPVEYOR_BUILD_FOLDER\Ryujinx\bin\$config\$appveyor_dotnet_runtime\win-x64\publish\
+    7z a ryujinx$config_name$APPVEYOR_BUILD_VERSION-win_x64.zip $APPVEYOR_BUILD_FOLDER/Ryujinx/bin/$config/$appveyor_dotnet_runtime/win-x64/publish/
     
-    7z a ryujinx$config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar $APPVEYOR_BUILD_FOLDER\Ryujinx\bin\$config\$appveyor_dotnet_runtime\linux-x64\publish\
+    7z a ryujinx$config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar $APPVEYOR_BUILD_FOLDER/Ryujinx/bin/$config/$appveyor_dotnet_runtime/linux-x64/publish/
     
     7z a ryujinx$config_name$env:APPVEYOR_BUILD_VERSION-linux_x64.tar.gz ryujinx$config_name$APPVEYOR_BUILD_VERSION-linux_x64.tar
     
-    7z a ryujinx$config_name$env:APPVEYOR_BUILD_VERSION-osx_x64.zip $APPVEYOR_BUILD_FOLDER\Ryujinx\bin\$config\$appveyor_dotnet_runtime\osx-x64\publish\
+    7z a ryujinx$config_name$env:APPVEYOR_BUILD_VERSION-osx_x64.zip $APPVEYOR_BUILD_FOLDER/Ryujinx/bin/$config/$appveyor_dotnet_runtime/osx-x64/publish/
 
       
       
