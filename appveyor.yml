@@ -72,7 +72,7 @@ build_script:
       mv Ryujinx-x86_64.AppImage ryujinx$config_name$APPVEYOR_BUILD_VERSION-linux_x64.AppImage 
     
 artifacts:
-- path: ryujinx$config_name$PPVEYOR_BUILD_VERSION-win_x64.zip
+- path: ryujinx$config_name$APPVEYOR_BUILD_VERSION-win_x64.zip
 - path: ryujinx$config_name$APPVEYOR_BUILD_VERSION-linux_x64.tar.gz
 - path: ryujinx$config_name$APPVEYOR_BUILD_VERSION-osx_x64.zip
 - path: ryujinx$config_name$APPVEYOR_BUILD_VERSION-linux_x64.AppImage
