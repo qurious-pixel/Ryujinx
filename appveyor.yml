@@ -1,7 +1,7 @@
-version: 1.0.{build} #
+version: 1.0.{build} 
 branches:
   only:
-  - $APPVEYOR_REPO_BRANCH
+  - newtesting
 image:
   - Visual Studio 2019
   - Ubuntu
