@@ -144,7 +144,9 @@ namespace ARMeilleure.Instructions
 
         public static void EmitCall(ArmEmitterContext context, ulong immediate)
         {
-            EmitJumpTableBranch(context, Const(immediate));
+            bool isRecursive = immediate == (ulong)context.BaseAddress;
+
+            EmitJumpTableBranch(context, Const(immediate), isRecursive);
         }
 
         private static void EmitNativeCall(ArmEmitterContext context, Operand nativeContextPtr, Operand funcAddr, bool isJump = false)
@@ -174,7 +176,7 @@ namespace ARMeilleure.Instructions
                 Operand lblContinue = context.GetLabel(nextAddr.Value);
 
                 // We need to clear out the call flag for the return address before comparing it.
-                context.BranchIf(lblContinue, context.BitwiseAnd(returnAddress, Const(~CallFlag)), nextAddr, Comparison.Equal);
+                context.BranchIf(lblContinue, context.BitwiseAnd(returnAddress, Const(~CallFlag)), nextAddr, Comparison.Equal, BasicBlockFrequency.Cold);
 
                 context.Return(returnAddress);
             }
