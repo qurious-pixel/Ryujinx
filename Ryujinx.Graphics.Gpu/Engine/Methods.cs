@@ -511,6 +511,7 @@ namespace Ryujinx.Graphics.Gpu.Engine
                 float scaleX = MathF.Abs(transform.ScaleX);
                 float scaleY = transform.ScaleY;
 
+
                 if (flipY)
                 {
                     scaleY = -scaleY;

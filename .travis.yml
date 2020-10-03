@@ -1,0 +1,52 @@
+sudo: false
+dist: xenial
+language: csharp
+cache: ccache
+dotnet: 3.1
+mono: none
+solution: Ryujinx.sln
+git:
+  clone: true
+  submodules: true
+  depth: 3
+addons: 
+  apt: 
+    sources:
+    packages: 
+      - p7zip-full
+      - cmake
+      - ninja-build
+      - zenity
+      - fuse
+      - ccache
+      - libsdl2-dev
+      - libalut-dev
+      - libglib2.0-0
+      - libopenal-dev
+install: 
+  - mkdir -p "$HOME/.ccache"
+  - dotnet restore
+  - dotnet publish -c Release -r linux-x64 -v n
+script: 
+  - ls -al ${pwd}
+  - chmod +x $TRAVIS_BUILD_DIR/.travis/appimage.sh
+  - $TRAVIS_BUILD_DIR/.travis/appimage.sh
+  - mkdir artifacts/
+  - cp $TRAVIS_BUILD_DIR/Ryujinx-x86_64.AppImage* artifacts/
+after_success: 
+  - ls -al artifacts/
+  - cd artifacts/
+  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
+  - chmod a+x upload.sh
+  - bash upload.sh Ryujinx-x86_64.AppImage*
+branches: 
+  except: 
+    - /^(?i:continuous.*)$/
+deploy: 
+  api_key: $GITHUB_TOKEN
+  file: artifacts/*
+  file_glob: true
+  provider: releases
+  skip_cleanup: true
+  true: 
+    tags: true

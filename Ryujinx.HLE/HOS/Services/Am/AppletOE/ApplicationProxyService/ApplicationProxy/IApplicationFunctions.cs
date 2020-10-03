@@ -53,6 +53,7 @@ namespace Ryujinx.HLE.HOS.Services.Am.AppletOE.ApplicationProxyService.Applicati
                     // Only the first 0x18 bytes of the Data seems to be actually used.
                     storageData = StorageHelper.MakeLaunchParams(context.Device.System.State.Account.LastOpenedUser);
                     break;
+
                 case LaunchParameterKind.Unknown:
                     throw new NotImplementedException("Unknown LaunchParameterKind.");
 
@@ -63,6 +64,7 @@ namespace Ryujinx.HLE.HOS.Services.Am.AppletOE.ApplicationProxyService.Applicati
             if (storageData == null)
             {
                 return ResultCode.NotAvailable;
+
             }
 
             MakeObject(context, new AppletAE.IStorage(storageData));

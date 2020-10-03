@@ -857,6 +857,7 @@ namespace Ryujinx.Graphics.Gpu.Image
                     Info.SamplesInY == info.SamplesInY) ? result : TextureViewCompatibility.Incompatible;
         }
 
+
         /// <summary>
         /// Checks if the view format is compatible with this texture format.
         /// In general, the formats are considered compatible if the bytes per pixel values are equal,

@@ -128,7 +128,6 @@ namespace Ryujinx.Ui
             device.UserChannelPersistence.ExecuteProgram(kind, value);
             MainWindow.GlWidget?.Exit();
         }
-
         public bool DisplayErrorAppletDialog(string title, string message, string[] buttons)
         {
             ManualResetEvent dialogCloseEvent = new ManualResetEvent(false);
@@ -179,5 +178,6 @@ namespace Ryujinx.Ui
 
             return showDetails;
         }
+
     }
 }

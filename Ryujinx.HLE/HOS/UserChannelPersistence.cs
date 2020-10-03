@@ -34,6 +34,7 @@ namespace Ryujinx.HLE.HOS
             _userChannelStorages.TryPop(out byte[] result);
 
             return result;
+
         }
 
         public bool IsEmpty => _userChannelStorages.Count == 0;
