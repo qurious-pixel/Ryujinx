@@ -11,7 +11,6 @@ fi
 
 
 if [ "$answer" -eq 0 ]; then 
-	export LD_PRELOAD="$APPDIR/usr/lib/updater/libcurl.so.4"
 	$APPDIR/usr/bin/AppImageUpdate $PWD/Ryujinx-x86_64.AppImage && $PWD/Ryujinx-x86_64.AppImage
 elif [ "$answer" -eq 1 ]; then
 	$APPDIR/AppRun-patched
