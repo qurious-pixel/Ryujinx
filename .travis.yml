@@ -7,7 +7,7 @@ mono: none
 solution: Ryujinx.sln
 git:
   clone: true
-  submodules: true
+  submodules: false
   depth: 3
 addons: 
   apt: 
@@ -25,6 +25,9 @@ addons:
       - libopenal-dev
 install: 
   - mkdir -p "$HOME/.ccache"
+  - ls -al
+  - mv Ryujinx Ryujinx2
+  - git clone --recursive https://github.com/Ryujinx/Ryujinx.git
   - dotnet restore
   - dotnet publish -c Release -r linux-x64 -v n
 script: 
