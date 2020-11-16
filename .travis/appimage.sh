@@ -3,9 +3,9 @@
 mkdir -p AppDir/usr/bin
 cp Ryujinx/bin/Release/net5.0/linux-x64/publish/* AppDir/usr/bin/
 cp Ryujinx/Ui/assets/Icon.png AppDir/Ryujinx.png
-cp Ryujinx.desktop AppDir/Ryujinx.desktop
-cp .travis/update.sh AppDir/update.sh
-cp .travis/AppRun AppDir/AppRun
+curl -sL https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/Ryujinx.desktop -o AppDir/Ryujinx.desktop
+curl -sL https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/.travis/update.sh -o AppDir/update.sh
+curl -sL https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/.travis/AppRun -o AppDir/AppRun
 curl -sL https://github.com/RPCS3/AppImageKit-checkrt/releases/download/continuous2/AppRun-patched-x86_64 -o AppDir/AppRun-patched
 curl -sL https://github.com/AppImage/AppImageKit/releases/download/continuous/runtime-x86_64 -o ./AppDir/runtime
 mkdir -p AppDir/usr/share/applications && cp ./AppDir/Ryujinx.desktop ./AppDir/usr/share/applications
@@ -33,7 +33,7 @@ mv update/AppImageUpdate ./AppDir/usr/bin/
 mkdir -p AppDir/usr/lib/
 mv update/* ./AppDir/usr/lib/
 
-echo $TRAVIS_COMMIT > ./AppDir/version.txt
+echo $TRAVIS_BUILD_ID > ./AppDir/version.txt
 
 
 ls -al ./AppDir
