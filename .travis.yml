@@ -25,8 +25,9 @@ addons:
       - libopenal-dev
 install: 
   - mkdir -p "$HOME/.ccache"
+  - cd ..
+  - mv ./Ryujinx/ ./Ryujinx2
   - ls -al
-  - mv Ryujinx Ryujinx2
   - git clone --recursive https://github.com/Ryujinx/Ryujinx.git
   - dotnet restore
   - dotnet publish -c Release -r linux-x64 -v n
