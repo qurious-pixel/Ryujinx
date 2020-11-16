@@ -6,7 +6,7 @@ dotnet: 5.0.100
 mono: none
 solution: Ryujinx.sln
 git:
-  clone: true
+  clone: false
   submodules: false
   depth: 3
 addons: 
