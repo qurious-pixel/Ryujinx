@@ -27,8 +27,7 @@ install:
   - mkdir -p "$HOME/.ccache"
   - cd ..
   - mv ./Ryujinx/ ./Ryujinx2
-  - ls -al
-  - git clone --recursive https://github.com/Ryujinx/Ryujinx.git
+  - git clone --recursive https://github.com/Ryujinx/Ryujinx.git && cd Ryujinx
   - dotnet restore
   - dotnet publish -c Release -r linux-x64 -v n
 script: 
