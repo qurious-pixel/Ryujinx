@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 
 mkdir -p AppDir/usr/bin
-cp Ryujinx/bin/Release/netcoreapp3.1/linux-x64/publish/* AppDir/usr/bin/
+cp Ryujinx/bin/Release/net5.0/linux-x64/publish/* AppDir/usr/bin/
 cp Ryujinx/Ui/assets/Icon.png AppDir/Ryujinx.png
 cp Ryujinx.desktop AppDir/Ryujinx.desktop
 cp .travis/update.sh AppDir/update.sh
