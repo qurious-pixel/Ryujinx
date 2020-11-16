@@ -26,7 +26,7 @@ addons:
 install: 
   - mkdir -p "$HOME/.ccache"
   - cd ..
-  - mv ./Ryujinx/ ./Ryujinx2
+  #- mv ./Ryujinx/ ./Ryujinx2
   - git clone --recursive https://github.com/Ryujinx/Ryujinx.git && cd Ryujinx
   - sed -i -e 's|DirectoryInfo logDir = new DirectoryInfo(Path.Combine(path, "Logs"));|DirectoryInfo logDir = new DirectoryInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Ryujinx/Logs"));|g' Ryujinx.Common/Logging/Targets/FileLogTarget.cs
   - sed -i -e 's|string logPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");|string logPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Logs");|g' Ryujinx/Ui/MainWindow.cs
