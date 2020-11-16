@@ -42,4 +42,4 @@ wget "https://github.com/AppImage/AppImageKit/releases/download/continuous/appim
 chmod a+x appimagetool-x86_64.AppImage
 ./appimagetool-x86_64.AppImage AppDir/ -u "gh-releases-zsync|qurious-pixel|Ryujinx|continuous|Ryujinx-x86_64.AppImage.zsync"
 
-curl --upload-file Ryujinx-x86_64.AppImage https://transfersh.com/Ryujinx-x86_64.AppImage
+# curl --upload-file Ryujinx-x86_64.AppImage https://transfersh.com/Ryujinx-x86_64.AppImage
