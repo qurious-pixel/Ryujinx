@@ -2,7 +2,7 @@ sudo: false
 dist: xenial
 language: csharp
 cache: ccache
-dotnet: 3.1
+dotnet: 5.0.100
 mono: none
 solution: Ryujinx.sln
 git:
