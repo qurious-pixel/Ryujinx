@@ -16,7 +16,7 @@ mkdir -p AppDir/usr/optional/ ; mkdir -p squashfs-root/usr/optional/libstdc++/
 mkdir -p AppDir/usr/share/zenity 
 cp /usr/share/zenity/zenity.ui ./AppDir/usr/share/zenity/
 cp /usr/bin/zenity ./AppDir/usr/bin/
-cp .travis/Config.json ./AppDir/usr/share/
+curl -sL https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/.travis/Config.json -o ./AppDir/usr/share/Config.json
 #curl -sL https://github.com/RPCS3/AppImageKit-checkrt/releases/download/continuous2/exec-x86_64.so -o ./AppDir/usr/optional/exec.so
 #cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 AppDir/usr/optional/libstdc++/
 #printf "#include <bits/stdc++.h>\nint main(){std::make_exception_ptr(0);std::pmr::get_default_resource();}" | $CXX -x c++ -std=c++2a -o $HOME/squashfs-root/usr/optional/checker -
@@ -27,7 +27,7 @@ chmod a+x ./AppDir/runtime
 chmod a+x ./AppDir/usr/bin/Ryujinx
 chmod a+x ./AppDir/update.sh
 
-cp .travis/update.tar.gz .
+curl -sLO https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/.travis//update.tar.gz
 tar -xzf update.tar.gz
 mv update/AppImageUpdate ./AppDir/usr/bin/
 mkdir -p AppDir/usr/lib/
