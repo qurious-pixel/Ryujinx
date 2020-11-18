@@ -9,9 +9,9 @@ curl -sL https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/.tra
 curl -sL https://github.com/RPCS3/AppImageKit-checkrt/releases/download/continuous2/AppRun-patched-x86_64 -o AppDir/AppRun-patched
 curl -sL https://github.com/AppImage/AppImageKit/releases/download/continuous/runtime-x86_64 -o ./AppDir/runtime
 mkdir -p AppDir/usr/share/applications && cp ./AppDir/Ryujinx.desktop ./AppDir/usr/share/applications
-mkdir -p AppDir/usr/share/icons && cp ./AppDir/Ryujinx.png ./AppDir/usr/share/icons
-mkdir -p AppDir/usr/share/icons/hicolor/scalable/apps && cp ./AppDir/Ryujinx.png ./AppDir/usr/share/icons/hicolor/scalable/apps
-mkdir -p AppDir/usr/share/pixmaps && cp ./AppDir/Ryujinx.png ./AppDir/usr/share/pixmaps
+mkdir -p AppDir/usr/share/icons && cp ./AppDir/Ryujinx.svg ./AppDir/usr/share/icons
+mkdir -p AppDir/usr/share/icons/hicolor/scalable/apps && cp ./AppDir/Ryujinx.svg ./AppDir/usr/share/icons/hicolor/scalable/apps
+mkdir -p AppDir/usr/share/pixmaps && cp ./AppDir/Ryujinx.svg ./AppDir/usr/share/pixmaps
 mkdir -p AppDir/usr/optional/ ; mkdir -p squashfs-root/usr/optional/libstdc++/
 mkdir -p AppDir/usr/share/zenity 
 cp /usr/share/zenity/zenity.ui ./AppDir/usr/share/zenity/
