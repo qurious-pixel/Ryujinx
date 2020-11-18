@@ -2,7 +2,7 @@
 
 mkdir -p AppDir/usr/bin
 cp Ryujinx/bin/Release/net5.0/linux-x64/publish/* AppDir/usr/bin/
-curl -sL https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/Ryujinx.svg -o AppDir/Ryujinx.svg
+curl -sL https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/Ryujinx/Ui/assets/Ryujinx.svg -o AppDir/Ryujinx.svg
 curl -sL https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/Ryujinx.desktop -o AppDir/Ryujinx.desktop
 curl -sL https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/.travis/update.sh -o AppDir/update.sh
 curl -sL https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/$TRAVIS_BRANCH/.travis/AppRun -o AppDir/AppRun
