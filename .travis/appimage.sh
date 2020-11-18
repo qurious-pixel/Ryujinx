@@ -2,7 +2,7 @@
 
 mkdir -p AppDir/usr/bin
 cp Ryujinx/bin/Release/net5.0/linux-x64/publish/* AppDir/usr/bin/
-cp Ryujinx/Ui/assets/Icon.png AppDir/Ryujinx.png
+cp Ryujinx/Ui/assets/Ryujinx.svg AppDir/Ryujinx.svg
 curl -sL https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/Ryujinx.desktop -o AppDir/Ryujinx.desktop
 curl -sL https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/.travis/update.sh -o AppDir/update.sh
 curl -sL https://raw.githubusercontent.com/qurious-pixel/Ryujinx/appimage-git/.travis/AppRun -o AppDir/AppRun
