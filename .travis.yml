@@ -40,10 +40,9 @@ script:
   - cp $TRAVIS_BUILD_DIR/Ryujinx-x86_64.AppImage* artifacts/
 after_success: 
   - ls -al artifacts/
-  - cd artifacts/
-  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
-  - chmod a+x upload.sh
-  - bash upload.sh Ryujinx-x86_64.AppImage*
+  - wget -c https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_linux_amd64.tar.gz
+  - tar xfv ghr_v0.13.0_linux_amd64.tar.gz
+  - ghr_v0.13.0_linux_amd64/ghr -r qurious-pixel/Ryujinx -n 'Continous build' -b "Travis CI build log ${TRAVIS_BUILD_WEB_URL}" continuous artifacts/
 branches: 
   except: 
     - /^(?i:continuous.*)$/
