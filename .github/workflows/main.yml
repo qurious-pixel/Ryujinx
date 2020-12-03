@@ -2,14 +2,14 @@ name: Build job
 
 on:
   push:
-    branches: [ app-git-test ]
+    branches: [ appimage-actions ]
     paths-ignore:
       - '.github/*'
       - '.github/ISSUE_TEMPLATE/**'
       - '*.yml'
       - 'README.md'
   pull_request:
-    branches: [ app-git-test ]
+    branches: [ appimage-actions ]
     paths-ignore:
       - '.github/*'
       - '.github/ISSUE_TEMPLATE/**'
@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
-        configuration: [Debug, Release]
+        configuration: [Release]
       fail-fast: false
     env:
       POWERSHELL_TELEMETRY_OPTOUT: 1
