@@ -33,7 +33,34 @@ jobs:
       - uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
+      - name: Install Packages
+        run: sudo apt-get install -y p7zip-full cmake ninja-build zenity fuse ccache  libsdl2-dev libalut-dev libglib2.0-0 libopenal-dev
+      - name: Clone
+        run: |
+            mkdir -p "$HOME/.ccache"
+            cd ..
+            mv ./Ryujinx/ ./Ryujinx2
+            git clone --recursive https://github.com/Ryujinx/Ryujinx.git && cd Ryujinx
+            partver=$(curl -s https://github.com/Ryujinx/Ryujinx/wiki/Changelog | grep 'user-content-10' | cut -c23-26 | head -n 1)
+            echo $partver
+            sed -i -e "s|<Version>1.0.0-dirty</Version>|<Version>1.0.$partver</Version>|g" Ryujinx/Ryujinx.csproj
+            sed -i -e 's|DirectoryInfo logDir = new DirectoryInfo(Path.Combine(path, "Logs"));|DirectoryInfo logDir = new DirectoryInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Ryujinx/Logs"));|g' Ryujinx.Common/Logging/Targets/FileLogTarget.cs
+            sed -i -e 's|string logPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");|string logPath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Ryujinx/Logs");|g' Ryujinx/Ui/MainWindow.cs
+            dotnet restore
+            dotnet publish -c Release -r linux-x64 -v n
       - name: Build
-        run: dotnet build -c "${{ matrix.configuration }}"
-      - name: Test
-        run: dotnet test -c "${{ matrix.configuration }}"
+        run: |
+            ls -al ${pwd}
+            chmod +x $TRAVIS_BUILD_DIR/../Ryujinx2/.travis/appimage.sh
+            ./../Ryujinx2/.travis/appimage.sh
+            mkdir artifacts/
+            cp ./Ryujinx-x86_64.AppImage* artifacts/
+      - name: Build
+        run: |
+            ls -al artifacts/
+            wget -c https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_linux_amd64.tar.gz
+            tar xfv ghr_v0.13.0_linux_amd64.tar.gz
+            ghr_v0.13.0_linux_amd64/ghr -u qurious-pixel -r Ryujinx -recreate -n 'Continous build' -b "GitHub https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" continuous artifacts/
+        env:
+          DEFAULT_BRANCH: appimage-actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
