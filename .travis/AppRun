@@ -10,9 +10,9 @@ GITVER=`wget -qO- https://www.github.com/qurious-pixel/Ryujinx/releases/tag/cont
 APPVER=`cat $APPDIR/version.txt`
 
 if [[ -z "$GITVER" ]]; then
-	$APPDIR/AppRun-patched
+	$APPDIR/AppRun-patched "$1"
 elif [ "$GITVER" = "$APPVER" ]; then
-	$APPDIR/AppRun-patched
+	$APPDIR/AppRun-patched "$1"
 else
 	$APPDIR/update.sh
 fi
