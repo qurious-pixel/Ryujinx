@@ -9,10 +9,13 @@ mkdir -p $HOME/.local/share/icons/hicolor/scalable/apps && cp $APPDIR/Ryujinx.sv
 GITVER=`wget -qO- https://www.github.com/qurious-pixel/Ryujinx/releases/tag/continuous | grep -o -P 'runs/.{0,9}' | cut -d '/' -f 2 | awk '!x[$0]++'` 
 APPVER=`cat $APPDIR/version.txt`
 
+GAME="$*"
+export GAMEPATH="$( cd "${GAME%/*}" && pwd )"/"${GAME##*/}"
+
 if [[ -z "$GITVER" ]]; then
-	$APPDIR/AppRun-patched "$1"
+	$APPDIR/AppRun-patched "$GAMEPATH"
 elif [ "$GITVER" = "$APPVER" ]; then
-	$APPDIR/AppRun-patched "$1"
+	$APPDIR/AppRun-patched "$GAMEPATH"
 else
 	$APPDIR/update.sh
 fi
