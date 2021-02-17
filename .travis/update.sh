@@ -9,13 +9,14 @@ else
 	answer=$?
 fi
 
+echo "GAMEPATH '${GAMEPATH}'"
 
 if [ "$answer" -eq 0 ]; then 
-	$APPDIR/usr/bin/AppImageUpdate $PWD/Ryujinx-x86_64.AppImage && $PWD/Ryujinx-x86_64.AppImage "$1"
+	$APPDIR/usr/bin/AppImageUpdate $PWD/Ryujinx-x86_64.AppImage && $PWD/Ryujinx-x86_64.AppImage "${GAMEPATH}"
 elif [ "$answer" -eq 1 ]; then
-	$APPDIR/AppRun-patched "$1"
+	$APPDIR/AppRun-patched "${GAMEPATH}"
 else 
-	$APPDIR/AppRun-patched "$1"
+	$APPDIR/AppRun-patched "${GAMEPATH}"
 fi
 exit 0
 
