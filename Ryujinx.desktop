@@ -7,4 +7,5 @@ Type=Application
 Categories=Game;Emulator;
 Name=Ryujinx
 GenericName=Switch Emulator
+MimeType=application/x-nx-nro;application/x-nx-nso;application/x-nx-nsp;application/x-nx-xci;
 Comment=A Switch Emulator
