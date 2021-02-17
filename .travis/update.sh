@@ -11,11 +11,11 @@ fi
 
 
 if [ "$answer" -eq 0 ]; then 
-	$APPDIR/usr/bin/AppImageUpdate $PWD/Ryujinx-x86_64.AppImage && $PWD/Ryujinx-x86_64.AppImage
+	$APPDIR/usr/bin/AppImageUpdate $PWD/Ryujinx-x86_64.AppImage && $PWD/Ryujinx-x86_64.AppImage "$1"
 elif [ "$answer" -eq 1 ]; then
-	$APPDIR/AppRun-patched
+	$APPDIR/AppRun-patched "$1"
 else 
-	$APPDIR/AppRun-patched
+	$APPDIR/AppRun-patched "$1"
 fi
 exit 0
 
