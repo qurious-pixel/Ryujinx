@@ -10,7 +10,11 @@ GITVER=`wget -qO- https://www.github.com/qurious-pixel/Ryujinx/releases/tag/cont
 APPVER=`cat $APPDIR/version.txt`
 
 GAME="$*"
-export GAMEPATH="$( cd "${GAME%/*}" && pwd )"/"${GAME##*/}"
+if [[ -d ${GAME%/*} ]] ; then
+	export GAMEPATH="$( cd "${GAME%/*}" && pwd )"/"${GAME##*/}"
+else
+	export GAMEPATH="$($APPDIR/usr/bin/realpath ${GAME##*/})"
+fi
 
 if [[ -z "$GITVER" ]]; then
 	$APPDIR/AppRun-patched "$GAMEPATH"
