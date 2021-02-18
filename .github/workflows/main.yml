@@ -36,7 +36,7 @@ jobs:
         with:
           dotnet-version: 5.0.x
       - name: Install Packages
-        run: sudo apt-get install -y p7zip-full cmake ninja-build zenity fuse ccache  libsdl2-dev libalut-dev libglib2.0-0 libopenal-dev
+        run: sudo apt-get install -y p7zip-full realpath cmake ninja-build zenity fuse ccache  libsdl2-dev libalut-dev libglib2.0-0 libopenal-dev
       - name: Clone
         run: |
             mkdir -p "$HOME/.ccache"
