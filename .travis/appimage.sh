@@ -18,6 +18,7 @@ mkdir -p AppDir/usr/optional/ ; mkdir -p squashfs-root/usr/optional/libstdc++/
 mkdir -p AppDir/usr/share/zenity 
 cp /usr/share/zenity/zenity.ui ./AppDir/usr/share/zenity/
 cp /usr/bin/zenity ./AppDir/usr/bin/
+cp /usr/bin/realpath ./AppDir/usr/bin/
 curl -sL https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$BRANCH/.travis/Config.json -o ./AppDir/usr/share/Config.json
 #curl -sL https://github.com/RPCS3/AppImageKit-checkrt/releases/download/continuous2/exec-x86_64.so -o ./AppDir/usr/optional/exec.so
 #cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 AppDir/usr/optional/libstdc++/
