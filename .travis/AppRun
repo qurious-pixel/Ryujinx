@@ -16,10 +16,12 @@ else
 	export GAMEPATH="$($APPDIR/usr/bin/realpath ${GAME##*/})"
 fi
 
+echo "GAMEPATH: ${GAMEPATH}"
+
 if [[ -z "$GITVER" ]]; then
-	$APPDIR/AppRun-patched "$GAMEPATH"
+	$APPDIR/AppRun-patched $GAMEPATH
 elif [ "$GITVER" = "$APPVER" ]; then
-	$APPDIR/AppRun-patched "$GAMEPATH"
+	$APPDIR/AppRun-patched $GAMEPATH
 else
 	$APPDIR/update.sh
 fi
