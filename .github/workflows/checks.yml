@@ -1,9 +1,8 @@
 name: Perform checks
 
 on:
-  push:
   pull_request:
-    branches: [ "" ]
+    branches: [ "master" ]
     paths:
       - '**'
       - '!.github/**'
