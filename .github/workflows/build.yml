@@ -78,6 +78,7 @@ jobs:
       - name: Build AppImage
         if: github.event_name == 'pull_request' && matrix.os == 'ubuntu-latest'
         run: |
+          set -x
           PLATFORM_NAME="${{ matrix.name }}"
 
           sudo apt install -y zsync desktop-file-utils appstream
