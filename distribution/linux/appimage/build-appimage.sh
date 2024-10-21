@@ -15,7 +15,13 @@ cp distribution/linux/Ryujinx.desktop AppDir/Ryujinx.desktop
 cp distribution/linux/appimage/AppRun AppDir/AppRun
 cp distribution/misc/Logo.svg AppDir/Ryujinx.svg
 
+# echo "$BUILDDIR"
+echo "$BUILDDIR"
+ls "$BUILDDIR"
+
 cp -r "$BUILDDIR"/* AppDir/usr/bin/
+
+ls AppDir/usr/bin/
 
 # Ensure necessary bins are set as executable
 chmod +x AppDir/AppRun AppDir/usr/bin/Ryujinx*
