@@ -133,6 +133,7 @@ jobs:
       - name: Build AppImage (Linux)
         if: matrix.platform.os == 'ubuntu-latest'
         run: |
+          set -x
           BUILD_VERSION="${{ steps.version_info.outputs.build_version }}"
           PLATFORM_NAME="${{ matrix.platform.name }}"
 
