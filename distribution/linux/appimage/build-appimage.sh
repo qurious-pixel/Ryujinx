@@ -17,11 +17,12 @@ cp distribution/misc/Logo.svg AppDir/Ryujinx.svg
 
 # echo "$BUILDDIR"
 echo "$BUILDDIR"
-ls "$BUILDDIR"
+tree "$BUILDDIR"
+ls publish_ava
 
 cp -r "$BUILDDIR"/* AppDir/usr/bin/
 
-ls AppDir/usr/bin/
+tree AppDir/usr/bin/
 
 # Ensure necessary bins are set as executable
 chmod +x AppDir/AppRun AppDir/usr/bin/Ryujinx*
