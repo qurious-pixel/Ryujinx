@@ -2,7 +2,7 @@ name: Perform checks
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ "" ]
     paths:
       - '**'
       - '!.github/**'
