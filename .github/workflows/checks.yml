@@ -3,7 +3,7 @@ name: Perform checks
 on:
   workflow_dispatch:
   pull_request:
-    branches: [ "master" ]
+    branches: [ "" ]
     paths:
       - '**'
       - '!.github/**'
